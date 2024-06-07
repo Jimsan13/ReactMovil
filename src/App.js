@@ -1,15 +1,21 @@
 import React from 'react';
 import './App.css';
-import Login from './components/login'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Signup from './components/signup';
+import Login from './components/login';
 
 
 
 function App() {
   return (
-    <div className="App">
-      <h1>React Native</h1>
-      <Login/>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
